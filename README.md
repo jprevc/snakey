@@ -1,4 +1,4 @@
-# Project Title
+# Snake Game
 
 Simple snake game made with pygame
 
