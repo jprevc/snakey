@@ -1,7 +1,7 @@
 import sys
 import pygame
 import random
-from SnakeClass import Snake, Cherry
+from snake_utility import Snake, Cherry
 import json
 
 def set_new_cherry_pos(snake_lst):
