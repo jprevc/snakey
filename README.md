@@ -1,24 +1,40 @@
 # Snake Game
 
-Simple snake game made with pygame
+A simple snake game made with pygame with multiplayer option.
 
 ## Getting Started
 
-To run the game open command window in root directory and type:
-python snake.py
+1) To run the game, you should have Python 3.6.x installed. You can install it from here:  
+[Python Download Page](https://www.python.org/downloads/release/python-365/)
 
-If you don't have python or pygame installed on your computer, you can open command window in root directory and type:
-pyg snake.py
+2) After Python is installed, install pygame 1.9.4 from here:  
+[Pygame 1.9.4 Download](http://www.pygame.org/download.shtml)
 
-### Prerequisites
+    Alternatively, you can install it with pip by running
+    ```sh
+    pip install pygame==1.9.4
+    ```
 
-For running the game you should have python3 installed with pygame package. 
+3) Clone this game's repository by running:
+    ```sh
+    git clone https://github.com/jprevc/SnakeGame.git
+    ```
+    
+4) Go to repo's directory and run
 
-### Installing
-If you don't have pygame installed you install it with:
-pip install pygame
+    ```sh
+    python snake_main.py
+    ```
+    
+A new window should appear where you and your friend can play a game of snake. Default keys for player one are 
+<kbd>&uarr;</kbd>, <kbd>&darr;</kbd>, <kbd>&rarr;</kbd> and <kbd>&larr;</kbd>. Keys for player two are 
+<kbd>W</kbd>, <kbd>S</kbd>, <kbd>D</kbd> and <kbd>A</kbd>.
 
-## Authors
+## Changing game configuration
+You can change the game configuration (for example number of players, number of cherries, game window size, etc.)
+by modifying **config.json** file, also present in repo directory.
 
-* **Jost Prevc**
+## Author
+
+*Jost Prevc*
 
