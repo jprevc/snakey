@@ -1,7 +1,7 @@
 import sys
 import pygame
 import random
-from snake_utility import Snake, Cherry
+from snake_utility import Snake, Cherry, SnakeGameStatusFlags
 import json
 
 def set_new_cherry_pos(snake_lst):
@@ -25,7 +25,14 @@ def set_new_cherry_pos(snake_lst):
 
 def init_game(config_data):
     """
-    Initializes the game.
+    Initializes the game with configuration, defined in config_data.
+
+    :param config_data: Dictionary, which contains configuration for the game, such as
+                        game window dimensions, number of snakes, keyboard keys, etc.
+    :type config_data: dict
+
+    :return: Lists of initialized snakes and cherries.
+    :rtype: tuple of list
     """
     # colors for snakes
     snake_colors = [(0, 255, 0),  # player 1 is green
@@ -58,6 +65,18 @@ def init_game(config_data):
     return init_snake_lst, init_cherry_lst
 
 def redraw_screen(snake_lst, cherry_lst, block_size):
+    """
+    Redraws screen with updated snake and cherry positions.
+
+    :param snake_lst: List of all snakes in the game.
+    :type snake_lst: list of Snake
+
+    :param cherry_lst: List of all cherries in the game.
+    :type cherry_lst: list of Cherry
+
+    :param block_size: Size of one block of snake or cherry in pixels.
+    :type block_size: int
+    """
     # clear screen
     screen.fill(BLACK)
 
@@ -78,7 +97,11 @@ def redraw_screen(snake_lst, cherry_lst, block_size):
     pygame.display.update()
 
 def main_loop(snake_list, cherry_list):
-    while 1:
+    """
+    Main loop of the game. This function returns only if snake collision occured.
+
+    """
+    while True:
         # capture events
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -111,10 +134,6 @@ def main_loop(snake_list, cherry_list):
 
                 # redraw screen with updated snake and cherry positions
                 redraw_screen(snake_list, cherry_list, block_size)
-
-
-class SnakeGameStatusFlags:
-    COLLISION_OCCURENCE = 1
 
 
 if __name__ == '__main__':
