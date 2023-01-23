@@ -1,8 +1,11 @@
 import sys
-import pygame
-import random
-from snakey import utils
 import json
+import argparse
+import random
+
+import pygame
+
+from snakey import utils
 
 
 def set_new_cherry_pos(snake_lst, configuration_data):
@@ -151,10 +154,15 @@ def main_loop(snake_list, cherry_list, screen, configuration_data):
 
 
 def main():
+
+    parser = argparse.ArgumentParser()
+
+    args = parser.parse_args()
+
     pygame.init()
 
     # load configuration data
-    with open("config.json", encoding="utf8") as config_file:
+    with open(utils.get_config_path(), encoding="utf8") as config_file:
         configuration_data = json.load(config_file)
 
     refresh_rate = configuration_data["refresh_rate"]

@@ -1,4 +1,9 @@
+import pathlib
 import random
+
+
+def get_config_path():
+    return pathlib.Path(__file__).parent / "res" / "config.json"
 
 
 class Snake:

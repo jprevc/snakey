@@ -33,11 +33,11 @@ test = [ "pytest",]
 [project.scripts]
 snake = "snakey.__main__:main"
 
-[tool.setuptools]
-packages = [ "snakey",]
+[tool.setuptools.packages.find]
+where = ["src"]
 
 [tool.setuptools.package-data]
-config = ["config.json"]
+"snakey.res" = ["*.json"]
 
 [tool.black]
 line-length = 120
