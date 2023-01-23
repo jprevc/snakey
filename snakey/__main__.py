@@ -1,7 +1,7 @@
 import sys
 import pygame
 import random
-from snake import utils
+from snakey import utils
 import json
 
 

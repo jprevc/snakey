@@ -3,7 +3,7 @@ requires = [ "setuptools", "setuptools-scm",]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "snake"
+name = "snakey"
 version = "2.0.0"
 description = "A simple snake game written in python."
 readme = "README.md"
@@ -31,10 +31,10 @@ dev = [ "pytest", "pylint", "pre-commit", "black[d]", "mypy", "tox", ]
 test = [ "pytest",]
 
 [project.scripts]
-snake = "snake.__main__:main"
+snake = "snakey.__main__:main"
 
 [tool.setuptools]
-packages = [ "snake",]
+packages = [ "snakey",]
 
 [tool.black]
 line-length = 120
