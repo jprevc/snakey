@@ -155,17 +155,26 @@ def main_loop(snake_list, cherry_list, screen, configuration_data):
 
 def main():
 
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(
+        prog="Snakey",
+        description="A simple snake game written in pyton.",
+    )
+
+    parser.add_argument("-c", "--config", required=False, help="Path to game configuration file.")
 
     args = parser.parse_args()
 
-    pygame.init()
+    config_path = args.config
+    if config_path is None:
+        config_path = utils.get_default_config_path()
 
     # load configuration data
-    with open(utils.get_config_path(), encoding="utf8") as config_file:
+    with open(config_path, encoding="utf8") as config_file:
         configuration_data = json.load(config_file)
 
     refresh_rate = configuration_data["refresh_rate"]
+
+    pygame.init()
 
     # set display
     screen = pygame.display.set_mode(configuration_data["main_window_size"])

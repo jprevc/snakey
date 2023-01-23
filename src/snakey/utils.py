@@ -2,7 +2,7 @@ import pathlib
 import random
 
 
-def get_config_path():
+def get_default_config_path():
     return pathlib.Path(__file__).parent / "res" / "config.json"
 
 
