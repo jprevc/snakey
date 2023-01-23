@@ -1,5 +1,6 @@
 import random
 
+
 class Snake:
     """
     Snake class. Defines one snake for one player.
@@ -177,6 +178,7 @@ class Cherry:
         # recursively call function until new cherry position is valid
         if not self._is_cherry_position_valid(snake_lst):
             self.set_new_random_position(snake_lst, game_dims)
+
 
 class SnakeGameStatusFlags:
     COLLISION_OCCURENCE = 1
