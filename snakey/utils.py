@@ -22,14 +22,9 @@ class Snake:
 
     :param num_of_start_blocks: Number of starting blocks for the snake.
     :type num_of_start_blocks: int
-
     """
-    def __init__(self,
-                 start_pos,
-                 move_keys,
-                 color,
-                 block_size,
-                 num_of_start_blocks):
+
+    def __init__(self, start_pos, move_keys, color, block_size, num_of_start_blocks):
 
         self.block_size = block_size
         self.start_pos = start_pos
@@ -51,13 +46,13 @@ class Snake:
         """
         if self.key_stack:
             key_pressed = self.key_stack[0]
-            if key_pressed == self.move_keys['up']:
+            if key_pressed == self.move_keys["up"]:
                 new_dir = [0, -1]
-            elif key_pressed == self.move_keys['right']:
+            elif key_pressed == self.move_keys["right"]:
                 new_dir = [1, 0]
-            elif key_pressed == self.move_keys['down']:
+            elif key_pressed == self.move_keys["down"]:
                 new_dir = [0, 1]
-            elif key_pressed == self.move_keys['left']:
+            elif key_pressed == self.move_keys["left"]:
                 new_dir = [-1, 0]
             else:
                 new_dir = self.curr_dir
@@ -82,8 +77,12 @@ class Snake:
         :type snakes_lst: list of Snake
         """
         # add new block to front of snake according to direction
-        new_block = [(self.block_pos_lst[0][0] + self.curr_dir[0]*self.block_size,
-                      self.block_pos_lst[0][1] + self.curr_dir[1]*self.block_size)]
+        new_block = [
+            (
+                self.block_pos_lst[0][0] + self.curr_dir[0] * self.block_size,
+                self.block_pos_lst[0][1] + self.curr_dir[1] * self.block_size,
+            )
+        ]
         self.block_pos_lst = new_block + self.block_pos_lst
 
         # remove last block from snake
@@ -130,8 +129,7 @@ class Snake:
                  otherwise.
         :rtype: bool
         """
-        return not ((0 <= self.block_pos_lst[0][0] < game_dims[0]) and
-                    (0 <= self.block_pos_lst[0][1] < game_dims[1]))
+        return not ((0 <= self.block_pos_lst[0][0] < game_dims[0]) and (0 <= self.block_pos_lst[0][1] < game_dims[1]))
 
 
 class Cherry:
@@ -141,6 +139,7 @@ class Cherry:
     :param block_size: Dimension of the block, which represents a cherry.
     :type block_size: int
     """
+
     def __init__(self, block_size):
         self.block_size = block_size
         self.position = None
@@ -172,8 +171,10 @@ class Cherry:
         :type game_dims: tuple
         """
 
-        self.position = (random.randrange(0, game_dims[0], self.block_size),
-                         random.randrange(0, game_dims[1], self.block_size))
+        self.position = (
+            random.randrange(0, game_dims[0], self.block_size),
+            random.randrange(0, game_dims[1], self.block_size),
+        )
 
         # recursively call function until new cherry position is valid
         if not self._is_cherry_position_valid(snake_lst):

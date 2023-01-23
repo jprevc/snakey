@@ -36,5 +36,8 @@ snake = "snakey.__main__:main"
 [tool.setuptools]
 packages = [ "snakey",]
 
+[tool.setuptools.package-data]
+config = ["config.json"]
+
 [tool.black]
 line-length = 120
