@@ -19,6 +19,12 @@
 
 ---
 
+---
+
+## Demo
+
+![Gameplay](docs/demo.gif)
+
 ## Installation
 
 ### From PyPI
