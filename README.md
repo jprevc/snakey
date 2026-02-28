@@ -49,12 +49,12 @@ python -m snakey
 
 ## Default Controls
 
-| Player | Up | Down | Left | Right |
-|--------|----|------|------|-------|
-| 1 | ↑ | ↓ | ← | → |
-| 2 | W | S | A | D |
-| 3 | T | G | F | H |
-| 4 | I | K | J | L |
+| Player | Up  | Down | Left | Right |
+|--------|-----|------|------|-------|
+| 1      | ↑   | ↓    | ←    | →     |
+| 2      | W   | S    | A    | D     |
+| 3      | T   | G    | F    | H     |
+| 4      | I   | K    | J    | L     |
 
 ---
 
@@ -68,16 +68,16 @@ snakey --config my_config.json
 
 ### Configuration options
 
-| Key | Type | Description |
-|-----|------|-------------|
-| `main_window_size` | `[width, height]` | Game window dimensions in pixels |
-| `block_size` | `int` | Size of each snake/cherry block in pixels |
-| `refresh_rate` | `int` | Game tick interval in milliseconds (lower = faster) |
-| `num_snakes` | `int` | Number of players (1–4) |
-| `initial_snake_length` | `int` | Starting length of each snake in blocks |
-| `num_cherries` | `int` | Number of cherries on the board at once |
-| `start_pos` | `[[x, y], …]` | Starting position for each snake's head |
-| `keys` | `[["K_UP", …], …]` | Pygame key names for each player (`up`, `right`, `down`, `left`) |
+| Key                    | Type               | Description                                                      |
+|------------------------|--------------------|------------------------------------------------------------------|
+| `main_window_size`     | `[width, height]`  | Game window dimensions in pixels                                 |
+| `block_size`           | `int`              | Size of each snake/cherry block in pixels                        |
+| `refresh_rate`         | `int`              | Game tick interval in milliseconds (lower = faster)              |
+| `num_snakes`           | `int`              | Number of players (1–4)                                          |
+| `initial_snake_length` | `int`              | Starting length of each snake in blocks                          |
+| `num_cherries`         | `int`              | Number of cherries on the board at once                          |
+| `start_pos`            | `[[x, y], …]`      | Starting position for each snake's head                          |
+| `keys`                 | `[["K_UP", …], …]` | Pygame key names for each player (`up`, `right`, `down`, `left`) |
 
 ### Default configuration
 
@@ -105,7 +105,7 @@ snakey --config my_config.json
 
 ### Prerequisites
 
-- Python 3.9+
+- Python 3.12+
 - [uv](https://docs.astral.sh/uv/) (recommended)
 
 ### Setup
@@ -115,7 +115,7 @@ git clone https://github.com/jprevc/snakey.git
 cd snakey
 
 # Install project and dev dependencies
-uv sync --extra dev
+uv sync
 
 # Install pre-commit hooks
 uv run pre-commit install

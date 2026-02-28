@@ -7,14 +7,11 @@ name = "snakey"
 version = "2.0.0"
 description = "A simple snake game written in Python."
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.12"
 license = { text = "MIT" }
 keywords = ["snake", "pygame", "game"]
 classifiers = [
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "License :: OSI Approved :: MIT License",
     "Topic :: Games/Entertainment :: Arcade",
@@ -22,7 +19,7 @@ classifiers = [
 authors = [{ name = "Jost Prevc", email = "jost.prevc@gmail.com" }]
 dependencies = ["pygame>=2.6.0"]
 
-[project.optional-dependencies]
+[dependency-groups]
 dev = [
     "pytest>=7",
     "pre-commit",
@@ -45,7 +42,7 @@ where = ["src"]
 
 [tool.ruff]
 line-length = 120
-target-version = "py39"
+target-version = "py312"
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I", "UP"]
